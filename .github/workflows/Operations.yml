@@ -38,12 +38,12 @@ jobs:
     runs-on : ubuntu-latest
     steps : 
     -  name : Download Add result for job1
-       uses: actions/download-artifact@v2
+       uses : actions/download-artifact@v2
        with : 
          name: Book1
     -  shell : bash
        run: |
-         value = 'cat AddBook.txt'
+         value=`cat AddBook.txt`
          expr $value - 3 > AddBook.txt
     -  name : Upload results for job2
        uses : actions/upload-artifact@v2
