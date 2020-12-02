@@ -1,0 +1,73 @@
+# This is a basic workflow to help you get started with Actions
+
+name: To operate functions
+
+# Controls when the action will run. 
+on:
+  # Triggers the workflow on push or pull request events but only for the main branch
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  job1 :
+    name: Addition Function
+# The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      - name: Addition of 2 and 4
+        shell: bash
+        run: |
+          expr 2 + 4 > AddBook.txt
+      - name  : upload AddResult for job1
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+        uses: actions/upload-artifact@v2
+        with :
+          name: Book1
+          path : AddBook.txt 
+              
+  job2 :
+    name : Substraction FUnction
+    needs : job1
+    runs-on : ubuntu-latest
+    steps : 
+    -  name : Download Add result for job1
+       uses: action/download-artifact@v2
+       with : 
+         name: Book1
+    -  shell : bash
+       run: |
+         value = 'cat AddBook.txt'
+         expr $value - 3 > AddBook.txt
+    -  name : Upload results for job2
+       uses : action/upload-artifact@v2
+       with:
+         name: Book1
+         path: AddBook.txt
+
+  job3 : 
+     name : Multiply by 5
+     needs : job2
+     runs-on : ubuntu-latest
+     steps : 
+     -  name : Download Substraction Result for job2
+        uses : action/download-artifact@v2
+        with : 
+          name : Book1
+     -  shell : bash
+        run : |
+          value = 'cat Addbook.txt'
+          expr $value \* 5 > AddBook.txt
+     -  name : Upload the results for job3
+        uses : action//upload-artifact@v2
+        with : 
+          name : Book1
+          path : AddBook.txt
+      
+         
