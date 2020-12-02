@@ -38,7 +38,7 @@ jobs:
     runs-on : ubuntu-latest
     steps : 
     -  name : Download Add result for job1
-       uses: action/download-artifact@v2
+       uses: actions/download-artifact@v2
        with : 
          name: Book1
     -  shell : bash
@@ -46,7 +46,7 @@ jobs:
          value = 'cat AddBook.txt'
          expr $value - 3 > AddBook.txt
     -  name : Upload results for job2
-       uses : action/upload-artifact@v2
+       uses : actions/upload-artifact@v2
        with:
          name: Book1
          path: AddBook.txt
@@ -57,7 +57,7 @@ jobs:
      runs-on : ubuntu-latest
      steps : 
      -  name : Download Substraction Result for job2
-        uses : action/download-artifact@v2
+        uses : actions/download-artifact@v2
         with : 
           name : Book1
      -  shell : bash
@@ -65,7 +65,7 @@ jobs:
           value = 'cat Addbook.txt'
           expr $value \* 5 > AddBook.txt
      -  name : Upload the results for job3
-        uses : action//upload-artifact@v2
+        uses : actions//upload-artifact@v2
         with : 
           name : Book1
           path : AddBook.txt
