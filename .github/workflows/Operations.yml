@@ -62,7 +62,7 @@ jobs:
           name : Book1
      -  shell : bash
         run : |
-          value = 'cat Addbook.txt'
+          value = `cat Addbook.txt`
           expr $value \* 5 > AddBook.txt
      -  name : Upload the results for job3
         uses : actions//upload-artifact@v2
