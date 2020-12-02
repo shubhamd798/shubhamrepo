@@ -45,7 +45,7 @@ jobs:
        run: |
          value=`cat AddBook.txt`
          expr $value - 3 > AddBook.txt
-         exho $value
+         echo substraction is $value
     -  name : Upload results for job2
        uses : actions/upload-artifact@v2
        with:
