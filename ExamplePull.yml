@@ -4,10 +4,10 @@ name: To operate functions
 # Controls when the action will run. 
 on:
   # Triggers the workflow on push or pull request events but only for the main branch
-  [push , pull_reuest]
+  [push , pull_request]
 
 
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+# A workflow run is made up of ne or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
   job1 :
