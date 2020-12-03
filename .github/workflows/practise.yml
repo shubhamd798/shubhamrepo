@@ -1,4 +1,4 @@
-name: practise
+name: abb
 
 on: push
 
@@ -10,6 +10,8 @@ jobs:
        run: |
          ls 
          pwd
+         git fetch
+         git checkout
     -  name: checkout
        uses: actions/checkout@v2
     -  name: after checkout
