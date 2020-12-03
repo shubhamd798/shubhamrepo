@@ -1,0 +1,15 @@
+name: Actions workflow
+
+on: pull_request
+
+jobs:
+  run-github-Action:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Simple forth.txt file
+        id: Txt 
+        uses: shubhamd798/shubhamrepo@v1
+        with: 
+          Number-of-the-file : Number
+      - name: Log time
+        run: echo "${{steps.Txt.outputs.time}}"    
