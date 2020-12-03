@@ -1,0 +1,13 @@
+name: practise
+
+on: push
+
+jobs:
+  actions-practise:
+    runs-on: ubuntu-latest
+    steps:
+    -  name: list of files
+       run: |
+         ls 
+         pwd
+
