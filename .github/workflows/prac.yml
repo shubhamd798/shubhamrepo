@@ -80,13 +80,13 @@ jobs:
         uses: actions/download-artifact@v2
         with : 
           name: Book1
-     - shell: bash
-       run: |
-            echo cat AddBook.txt
-            pwd
-            echo $GITHUB_SHA
-            echo $GITHUB_REPOSITORY
-            echo $GITHUB_WORKSPACE
+     -  shell: bash
+        run: |
+           echo cat AddBook.txt
+           pwd
+           echo $GITHUB_SHA
+           echo $GITHUB_REPOSITORY
+           echo $GITHUB_WORKSPACE
     
 
           
