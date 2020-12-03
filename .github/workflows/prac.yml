@@ -73,14 +73,20 @@ jobs:
 
   job4 :
      name: Files
+     needs: [job3]
      runs-on: ubuntu-latest
      steps:
      -  name: List of files
-        run: |
-          pwd
-          echo $GITHUB_SHA
-          echo $GITHUB_REPOSITORY
-          echo $GITHUB_WORKSPACE
-          git clone git@github: $GITHUB_REPOSITORY
+        uses: actions/download-artifact@v2
+        with : 
+          name: Book1
+     - shell: bash
+       run: |
+            echo cat AddBook.txt
+            pwd
+            echo $GITHUB_SHA
+            echo $GITHUB_REPOSITORY
+            echo $GITHUB_WORKSPACE
+    
 
           
