@@ -6,7 +6,7 @@ jobs:
   run-github-Action:
     runs-on: ubuntu-latest
     steps:
-      - name:
+      - name: list files
         run: |
           pwd 
           ls 
