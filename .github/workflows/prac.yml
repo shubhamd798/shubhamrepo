@@ -73,10 +73,15 @@ jobs:
 
   job4 :
      name: Files
+     needs: [job3]
      runs-on: ubuntu-latest
      steps:
-     -  name: List of files
-        run: |
+       - name: Download result 
+         uses: actions/download-checkout@v2
+         with:
+           name: Book1
+       - name: List of files
+         run: |
           pwd
           echo $GITHUB_SHA
           echo $GITHUB_REPOSITORY
