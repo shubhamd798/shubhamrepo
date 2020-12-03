@@ -21,7 +21,7 @@ jobs:
         shell: bash
         run: |
           expr 2 + 4 > AddBook.txt
-      - name  : upload AddResult for job1
+      - name  : upload AddResults for job1
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
         uses: actions/upload-artifact@v2
         with :
