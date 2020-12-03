@@ -66,17 +66,22 @@ jobs:
           value=`cat AddBook.txt`
           expr $value \* 5 > AddBook.txt
      -  name : Upload the results for job3
-        uses : actions//upload-artifact@v2
+        uses : actions/upload-artifact@v2
         with : 
           name : Book1
           path : AddBook.txt
 
   job4 :
      name: Files
+     needs: [job3]
      runs-on: ubuntu-latest
      steps:
-     -  name: List of files
-        run: |
+       - name: Download result 
+         uses: actions/download-artifact@v2
+         with:
+           name: Book1
+       - name: List of files
+         run: |
           pwd
           echo $GITHUB_SHA
           echo $GITHUB_REPOSITORY
