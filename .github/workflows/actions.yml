@@ -6,9 +6,13 @@ jobs:
   run-github-Action:
     runs-on: ubuntu-latest
     steps:
+      - name:
+        run: |
+          pwd 
+          ls 
       - name: Simple forth.txt file
         id: Txt 
-        uses: shubhamd798/shubhamrepo@master
+        uses: actions/checkout@v2 
         with: 
           Number-of-the-file : Number
       - name: Log time
