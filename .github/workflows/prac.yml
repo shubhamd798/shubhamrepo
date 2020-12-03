@@ -72,10 +72,10 @@ jobs:
           path : AddBook.txt
 
   job4 :
-    name: Files
-    runs-on: ubuntu-latest
-    steps:
-      - name: List of files
+     name: Files
+     runs-on: ubuntu-latest
+     steps:
+     -  name: List of files
         run: |
           pwd
           echo $GITHUB_SHA
