@@ -8,7 +8,7 @@ jobs:
     steps:
       - name: Simple forth.txt file
         id: Txt 
-        uses: shubhamd798/shubhamrepo@v1
+        uses: shubhamd798/shubhamrepo@master
         with: 
           Number-of-the-file : Number
       - name: Log time
